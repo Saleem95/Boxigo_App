@@ -33,7 +33,7 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
         <div>
           <div className="flex justify-between items-center dtl1">
             <p className="w-1/4"><strong>From:</strong> {moveDetail.moving_from}</p>
-            <p className="w-1/4 m-auto flex text-center justify-center"><FaArrowRight className="rounded-full" /></p>
+            <p className='pr m-auto flex text-center justify-center '><p className=' rounded-full text-red-500'><FaArrowRight /></p></p>
             <p className="w-1/4"><strong>To:</strong> {moveDetail.moving_to}</p>
             <p className="w-1/4 text-right"><strong>Request#:</strong> {moveDetail.estimate_id}</p>
           </div>
