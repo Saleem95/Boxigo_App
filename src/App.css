@@ -1,0 +1,41 @@
+.pr {
+  width: 33%;
+}
+
+.rounded-full {
+  padding: 1px !important;
+}
+
+.dtl1 .m-auto p {
+  box-sizing: border-box;
+  box-shadow: 1px 2px 4px 3px #aaa;
+  padding: 10px !important;
+  height: fit-content;
+}
+
+.dtl2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.dtl2 p {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.dtl2 p .text-red-500 {
+  margin-right: 5px !important;
+  font-size: x-large !important;
+}
+
+.box-dtl {
+  width: 200px;
+}
+
+.box-dtl strong {
+  margin-top: 100px 0;
+}
