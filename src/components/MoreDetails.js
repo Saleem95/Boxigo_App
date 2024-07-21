@@ -32,10 +32,10 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
       ) : moveDetail ? (
         <div>
           <div className="flex justify-between items-center dtl1">
-            <p className="w-1/4"><strong>From:</strong> {moveDetail.moving_from}</p>
+            <p className="pr"><strong>From:</strong><br /> {moveDetail.moving_from}</p>
             <p className='pr m-auto flex text-center justify-center '><p className=' rounded-full text-red-500'><FaArrowRight /></p></p>
-            <p className="w-1/4"><strong>To:</strong> {moveDetail.moving_to}</p>
-            <p className="w-1/4 text-right"><strong>Request#:</strong> {moveDetail.estimate_id}</p>
+            <p className="pr"><strong>To:</strong><br /> {moveDetail.moving_to}</p>
+            <p className="pr"><strong>Request#:</strong><br /> {moveDetail.estimate_id}</p>
           </div>
           <div className="flex dtl2 mt-5">
             <p className="text-sm"><AiFillHome className="text-red-500" /> {moveDetail.property_size}</p>

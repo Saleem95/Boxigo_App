@@ -7,7 +7,7 @@ import { FaTruckArrowRight } from "react-icons/fa6";
 
 const Sidebar = () => {
   return (
-    <div className="h-screen w-64 flex flex-col">
+    <div className="h-screen w-60 flex flex-col">
       <nav className="mt-10 flex-grow ml-2">
         <NavLink
           to="/"
