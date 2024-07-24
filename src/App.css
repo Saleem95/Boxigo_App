@@ -6,7 +6,7 @@
   padding: 1px !important;
 }
 
-.dtl1 .m-auto p {
+.dtl1 .m-auto span {
   box-sizing: border-box;
   box-shadow: 1px 2px 4px 3px #aaa;
   padding: 10px !important;
@@ -20,14 +20,14 @@
   justify-content: space-between;
 }
 
-.dtl2 p {
+.dtl2 .div {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-.dtl2 p .text-red-500 {
+.dtl2 .div .text-red-500 {
   margin-right: 5px !important;
   font-size: x-large !important;
 }

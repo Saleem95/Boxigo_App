@@ -32,17 +32,17 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
       ) : moveDetail ? (
         <div>
           <div className="flex justify-between items-center dtl1">
-            <p className="pr"><strong>From:</strong><br /> {moveDetail.moving_from}</p>
-            <p className='pr m-auto flex text-center justify-center '><p className=' rounded-full text-red-500'><FaArrowRight /></p></p>
-            <p className="pr"><strong>To:</strong><br /> {moveDetail.moving_to}</p>
-            <p className="pr"><strong>Request#:</strong><br /> {moveDetail.estimate_id}</p>
+            <div className="pr"><strong>From:</strong><br /> {moveDetail.moving_from}</div>
+            <div className='pr m-auto flex text-center justify-center '><span className=' rounded-full text-red-500'><FaArrowRight /></span></div>
+            <div className="pr"><strong>To:</strong><br /> {moveDetail.moving_to}</div>
+            <div className="pr"><strong>Request#:</strong><br /> {moveDetail.estimate_id}</div>
           </div>
           <div className="flex dtl2 mt-5">
-            <p className="text-sm"><AiFillHome className="text-red-500" /> {moveDetail.property_size}</p>
-            <p className="text-sm"><FaTimeline className="text-red-500" /> {moveDetail.total_items}</p>
-            <p className="text-sm"><FaRoute className="text-red-500" /> {moveDetail.distance}</p>
-            <p className="text-sm"><FaTruck className="text-red-500" /> {moveDetail.moving_on}</p>
-            <p className="flex"><IoCheckbox className="text-red-500" /> Is flexible: {moveDetail.is_flexible ? 'Yes' : 'No'}</p>
+            <div className="div text-sm"><AiFillHome className="text-red-500" /> {moveDetail.property_size}</div>
+            <div className="div text-sm"><FaTimeline className="text-red-500" /> {moveDetail.total_items}</div>
+            <div className="div text-sm"><FaRoute className="text-red-500" /> {moveDetail.distance}</div>
+            <div className="div text-sm"><FaTruck className="text-red-500" /> {moveDetail.moving_on}</div>
+            <div className="div flex"><IoCheckbox className="text-red-500" /> Is flexible: {moveDetail.is_flexible ? 'Yes' : 'No'}</div>
             <button className="px-4 py-1 border-4 text-red-500 border-red-500 rounded hover:bg-sky-100" onClick={() => handleViewMoveDetails(moveDetail.estimate_id)}>
               View Move Details
             </button>
@@ -51,7 +51,7 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
             </button>
           </div>
           <div className="mt-4">
-            <p className='flex items-center'><FaExclamationTriangle className="text-red-500 mr-2" /> <strong>Disclaimer:</strong> Please update your move date before two days of shifting.</p>
+            <div className='flex items-center'><FaExclamationTriangle className="text-red-500 mr-2" /> <strong>Disclaimer:</strong> Please update your move date before two days of shifting.</div>
           </div>
           <div className='flex items-center'>
             <h2 className="text-xl font-bold mt-4">Inventory Details</h2>
@@ -60,7 +60,7 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
             </h2>
           </div>
           <div className='mt-3'>
-            <p
+            <div
               className="px-4 py-2 bg-gray-200 rounded flex justify-between items-center"
               onClick={toggleDetails}
             >
@@ -70,37 +70,37 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
               ) : (
                 <IoIosArrowDown className="ml-2" />
               )}</i>
-            </p>
-            {isExpanded && moveDetail.items && moveDetail.items.inventory && (
+            </div>
+            {Array.isArray(isExpanded && moveDetail.items && moveDetail.items.inventory && (
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-lg font-bold">Furniture Details</h3>
                   <div className="p-2 box-dtl">
                     <div className='my-5'>
-                      <p className='flex justify-between'>1 Seater Sofa  <p>2</p></p>
+                      <div className='flex justify-between'>???{moveDetail?.items?.inventory?.displayName} <span>{moveDetail?.items?.inventory?.qty}</span></div>
                       <strong>Wooden</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>3 Seater Sofa  <p>1</p></p>
+                      <div className='flex justify-between'>3 Seater Sofa  <span>1</span></div>
                       <strong>Wooden</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>TV Cabinent  <p>1</p></p>
+                      <div className='flex justify-between'>TV Cabinent  <span>1</span></div>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Study table <p>1</p></p>
+                      <div className='flex justify-between'>Study table <span>1</span></div>
                       <strong>medium</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Teapoy  <p>1</p></p>
+                      <div className='flex justify-between'>Teapoy  <span>1</span></div>
                       <strong>class top</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Shoe Rack  <p>1</p></p>
+                      <div className='flex justify-between'>Shoe Rack  <span>1</span></div>
                       <strong>small</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Plastic Chair  <p>2</p></p>
+                      <div className='flex justify-between'>Plastic Chair  <span>2</span></div>
                     </div>
                   </div>
                 </div>
@@ -109,15 +109,15 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
                   <h3 className="text-lg font-bold">Electricals</h3>
                   <div className="p-2 box-dtl">
                     <div className='my-5'>
-                      <p className='flex justify-between'>LCD TV <p>1</p></p>
+                      <div className='flex justify-between'>LCD TV <span>1</span></div>
                       <strong>30-40 inch</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Home Theatro <p>1</p></p>
+                      <div className='flex justify-between'>Home Theatro <span>1</span></div>
                       <strong>3+1 Speakers</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Ceiling Fan <p>1</p></p>
+                      <div className='flex justify-between'>Ceiling Fan <span>1</span></div>
                       <strong></strong>
                     </div>
                   </div>
@@ -127,24 +127,24 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
                   <h3 className="text-lg font-bold">Fragile</h3>
                   <div className="p-2 box-dtl">
                     <div className='my-5'>
-                      <p className='flex justify-between'>Bulb  <p>1</p></p>
+                      <div className='flex justify-between'>Bulb  <span>1</span></div>
                       <strong>.</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>Picture/Poster/Painting <p>1</p></p>
+                      <div className='flex justify-between'>Picture/Poster/Painting <span>1</span></div>
                       <strong>small</strong>
                     </div>
                     <div className='my-5'>
-                      <p className='flex justify-between'>clock  <p>1</p></p>
+                      <div className='flex justify-between'>clock  <span>1</span></div>
                       <strong>small</strong>
                     </div>
                   </div>
                 </div>
               </div>
-            )}
+            ))}
           </div>
           <div className='mt-3'>
-            <p
+            <div
               className="px-4 py-2 bg-gray-200 rounded flex justify-between items-center"
               onClick={toggleDetails}
             >
@@ -154,31 +154,31 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
               ) : (
                 <IoIosArrowDown className="ml-2" />
               )}</i>
-            </p>
+            </div>
             {isExpanded && moveDetail.items && moveDetail.items.inventory && (
               <div className="mt-4">
               </div>
             )}
           </div>
           <div className='mt-3'>
-            <p
+            <div
               className="px-4 py-2 bg-gray-200 rounded flex justify-between items-center"
               onClick={toggleDetails}
             >
-              Khichen
+              Kitchen
               <i className='text-right'>{isExpanded ? (
                 <IoIosArrowUp className="ml-2" />
               ) : (
                 <IoIosArrowDown className="ml-2" />
               )}</i>
-            </p>
+            </div>
             {isExpanded && moveDetail.items && moveDetail.items.inventory && (
               <div className="mt-4">
               </div>
             )}
           </div>
           <div className='mt-3'>
-            <p
+            <div
               className="px-4 py-2 bg-gray-200 rounded flex justify-between items-center"
               onClick={toggleDetails}
             >
@@ -188,7 +188,7 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
               ) : (
                 <IoIosArrowDown className="ml-2" />
               )}</i>
-            </p>
+            </div>
             {isExpanded && moveDetail.items && moveDetail.items.inventory && (
               <div className="mt-4">
               </div>
@@ -199,62 +199,59 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
         <p>No details found</p>
       )}
       <div className='flex items-center'>
-        <h2 className="text-xl font-bold mt-4">Hoiuse Details</h2>
+        <h2 className="text-xl font-bold mt-4">House Details</h2>
         <h2 className='text-x font-bold mt-4 ml-6 p-2 bg-black text-white hover:bg-red-700 rounded-md'>
           <button type="button">Edit House Details</button>
         </h2>
       </div>
       <div className='border-b-2'>
-        <h2 className="text-xl font-bold mt-4 text-red-600">House Details</h2>
-
-        <div key={moveDetail.estimate_id} className="p-2 flex	justify-between flex-wrap">
+        <h2 className="text-xl font-bold mt-4 text-red-600">New House Details</h2>
+        <div key={moveDetail.estimate_id} className="p-2 flex justify-between flex-wrap">
           <div className='my-5'>
             <strong>Floor No</strong>
-            <p className='flex justify-between'>{moveDetail.new_floor_no} </p>
+            <div className='flex justify-between'>{moveDetail.new_floor_no} </div>
           </div>
           <div className='my-5'>
-            <strong>Elevator Avaliable</strong>
-            <p className='flex justify-between'>{moveDetail.packing_service}</p>
+            <strong>Elevator Available</strong>
+            <div className='flex justify-between'>{moveDetail.new_elevator_availability}</div>
           </div>
           <div className='my-5'>
             <strong>Packing Required</strong>
-            <p className='flex justify-between'>{moveDetail.new_elevator_availability}</p>
+            <div className='flex justify-between'>{moveDetail.packing_service}</div>
           </div>
           <div className='my-5'>
             <strong>Distance From truck to door</strong>
-            <p className='flex justify-between'>1 meters</p>
+            <div className='flex justify-between'>1 meters</div>
           </div>
           <div className='my-5'>
-            <strong> Additional information</strong>
-            <p className='flex justify-between'>No Additional info</p>
+            <strong>Additional information</strong>
+            <div className='flex justify-between'>No Additional info</div>
           </div>
-
         </div>
       </div>
       <div className='border-b-2'>
-        <h2 className="text-xl font-bold mt-4 text-red-600">House Details</h2>
-        <div key={moveDetail.estimate_id} className="p-2 flex	justify-between flex-wrap">
+        <h2 className="text-xl font-bold mt-4 text-red-600">Old House Details</h2>
+        <div key={moveDetail.estimate_id} className="p-2 flex justify-between flex-wrap">
           <div className='my-5'>
             <strong>Floor No</strong>
-            <p className='flex justify-between'>{moveDetail.old_floor_no} </p>
+            <div className='flex justify-between'>{moveDetail.old_floor_no} </div>
           </div>
           <div className='my-5'>
-            <strong>Elevator Avaliable</strong>
-            <p className='flex justify-between'>{moveDetail.packing_service}</p>
+            <strong>Elevator Available</strong>
+            <div className='flex justify-between'>{moveDetail.old_elevator_availability}</div>
           </div>
           <div className='my-5'>
             <strong>Packing Required</strong>
-            <p className='flex justify-between'>{moveDetail.old_elevator_availability}</p>
+            <div className='flex justify-between'>{moveDetail.packing_service}</div>
           </div>
           <div className='my-5'>
             <strong>Distance From truck to door</strong>
-            <p className='flex justify-between'>1 meters</p>
+            <div className='flex justify-between'>1 meters</div>
           </div>
           <div className='my-5'>
-            <strong> Additional information</strong>
-            <p className='flex justify-between'>No Additional info</p>
+            <strong>Additional information</strong>
+            <div className='flex justify-between'>No Additional info</div>
           </div>
-
         </div>
       </div>
     </div>

@@ -28,27 +28,27 @@ const MoveDetails = ({ move }) => {
         <div key={move.estimate_id} className="mb-4 p-4 border-b-2 rounded">
             <div className="">
                 <div className='flex dtl1 justify-between'>
-                    <p className='pr'><strong>From:</strong> <br /> {move.moving_from}</p>
-                    <p className='pr m-auto flex text-center justify-center '><p className=' rounded-full text-red-500'><FaArrowRight /></p></p>
-                    <p className='pr'><strong>To:</strong> <br />{move.moving_to}</p>
-                    <p className='pr '><strong>Request#:</strong><br /> {move.estimate_id}</p>
+                    <div className='pr'><strong>From:</strong> <br /> {move.moving_from}</div>
+                    <div className='pr m-auto flex text-center justify-center '><span className=' rounded-full text-red-500'><FaArrowRight /></span></div>
+                    <div className='pr'><strong>To:</strong> <br />{move.moving_to}</div>
+                    <div className='pr '><strong>Request#:</strong><br /> {move.estimate_id}</div>
                 </div>
             </div>
             <div className='flex dtl2 mt-5'>
-                <p className='text-sm'><AiFillHome className='text-red-500' /> {move.property_size}</p>
-                <p className='text-sm'><FaTimeline className='text-red-500' /> {move.total_items}</p>
-                <p className='text-sm'><FaRoute className='text-red-500' /> {move.distance}</p>
-                <p className='text-sm'><FaTruck className='text-red-500' /> {move.moving_on}</p>
-                <p className='flex'><IoCheckbox className='text-red-500' /> Is flexible</p>
-                <button className="px-4 py-1 border-4 text-red-500 border-red-500 rounded" onClick={() => handleViewMoveDetails(move.estimate_id)}>
+                <div className='div text-sm'><AiFillHome className='text-red-500' /> {move.property_size}</div>
+                <div className='div text-sm'><FaTimeline className='text-red-500' /> {move.total_items}</div>
+                <div className='div text-sm'><FaRoute className='text-red-500' /> {move.distance}</div>
+                <div className='div text-sm'><FaTruck className='text-red-500' /> {move.moving_on}</div>
+                <div className='div flex'><IoCheckbox className='text-red-500' /> Is flexible</div>
+                <button className="px-4 py-1 border-4 text-red-500 border-red-500 rounded hover:bg-sky-100" onClick={() => handleViewMoveDetails(move.estimate_id)}>
                     View Move Details
                 </button>
-                <button className="px-4 py-2 bg-red-500 text-white rounded" onClick={() => toggleDetails(move.estimate_id)}>
+                <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-black" onClick={() => toggleDetails(move.estimate_id)}>
                     Quotes Awaiting
                 </button>
             </div>
             <div className='mt-4'>
-                <p className='flex items-center'><FaExclamationTriangle className="text-red-500 mr-2" /> <strong>Disclaimer:</strong> Please update your move date before two days of shifting.</p>
+                <div className='flex items-center'><FaExclamationTriangle className="text-red-500 mr-2" /> <strong>Disclaimer:</strong> Please update your move date before two days of shifting.</div>
             </div>
             <div id={`details-${move.estimate_id}`} className="hidden mt-4">
                 <h3 className="text-lg font-bold">Inventory Details</h3>
@@ -56,13 +56,13 @@ const MoveDetails = ({ move }) => {
                     {Array.isArray(move.items?.inventory) && move.items.inventory.length > 0 ? (
                         move.items.inventory.map((item, index) => (
                             <div key={index} className="border p-2 rounded">
-                                <p>{item.item_name}</p>
-                                <p><strong>{item.type}</strong></p>
-                                <p>{item.quantity}</p>
+                                <div>{item.item_name}</div>
+                                <div><strong>{item.type}</strong></div>
+                                <div>{item.quantity}</div>
                             </div>
                         ))
                     ) : (
-                        <p>No items found</p>
+                        <div>No items found</div>
                     )}
                 </div>
             </div>
