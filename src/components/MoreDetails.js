@@ -77,7 +77,7 @@ const MoreDetails = ({ loading, error, moreDetails, move }) => {
                   <h3 className="text-lg font-bold">Furniture Details</h3>
                   <div className="p-2 box-dtl">
                     <div className='my-5'>
-                      <div className='flex justify-between'>???{moveDetail?.items?.inventory?.displayName} <span>{moveDetail?.items?.inventory?.qty}</span></div>
+                      <div className='flex justify-between'>3 Seater Sofa  <span>2</span></div>
                       <strong>Wooden</strong>
                     </div>
                     <div className='my-5'>
